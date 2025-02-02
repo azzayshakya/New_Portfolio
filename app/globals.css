@@ -1,11 +1,27 @@
+/*
+ Tailwind CSS Configuration & Custom Styles Documentation
+
+ Overview:
+ This file contains Tailwind CSS configurations and custom styles to ensure consistent 
+ design throughout the project. It includes theme variables, global styles, and utility classes.
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/*
+ Theme Variables (@layer base)
+
+ This section defines CSS variables for light and dark themes, ensuring dynamic color management.
+*/
+
 @layer base {
   :root {
     --background: 0 0% 100%;
+    /* Light mode background */
     --foreground: 240 10% 3.9%;
+    /* Light mode text */
 
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -37,7 +53,9 @@
 
   .dark {
     --background: 240 10% 3.9%;
+    /* Dark mode background */
     --foreground: 0 0% 98%;
+    /* Dark mode text */
 
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -66,6 +84,11 @@
   }
 }
 
+/*
+ Global Styles (@layer base)
+ This section applies global styles like smooth scrolling and consistent background/text colors.
+*/
+
 @layer base {
   * {
     @apply border-border !scroll-smooth;
@@ -79,6 +102,11 @@
     @apply active:outline-none;
   }
 }
+
+/*
+ Utility Classes (@layer utilities)
+ Defines reusable utility classes for headings and gradients.
+*/
 
 @layer utilities {
   .heading {
