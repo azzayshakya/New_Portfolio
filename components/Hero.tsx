@@ -32,7 +32,7 @@ export default function Hero() {
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
           <p className="md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl ">
-            Hi, I'm ajay kumar shakya a web developer{" "}
+          Hi, I&#39;m Ajay Kumar Shakya, a web developer
           </p>
           <Link href="/">
             <MagicButton
