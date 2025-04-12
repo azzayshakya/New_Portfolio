@@ -63,8 +63,7 @@ const config = {
         "primary-foreground": "var(--primary-foreground)",
         secondary: "var(--secondary)",
         "secondary-foreground": "var(--secondary-foreground)",
-        // light-green:"var(--light-green)",
-        "light-green":"var(--light-green)",
+        "light-green": "var(--light-green)",
         muted: "var(--muted)",
         "muted-foreground": "var(--muted-foreground)",
         destructive: "var(--destructive)",
@@ -81,6 +80,7 @@ const config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

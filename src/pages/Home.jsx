@@ -1,35 +1,27 @@
 export default function Home() {
-  const teamMembers = [
-    { name: "John Doe", role: "CEO", img: "" },
-    { name: "Jane Smith", role: "CTO", img: "" },
-    { name: "Alex Johnson", role: "Lead Developer", img: "" },
-  ];
-
   return (
-    <div className="fade-in-up mt-10 flex flex-col items-center justify-center text-white">
-      <h1 className="md:text-6xl bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-5xl font-extrabold text-transparent">
-        Welcome to Our Awesome Website!
-      </h1>
-      <p className="mt-4 text-lg text-gray-200 md:text-xl">
-        Where innovation meets excellence.
-      </p>
+    <section
+    id="home"
+    className="w-full min-h-screen flex flex-col justify-center items-center  text-white px-6 text-center bg-hero-pattern"
+  >
+     <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+    <p className="uppercase text-sm tracking-widest text-gray-400 mb-4">
+      Creating Modern & Efficient Applications
+    </p>
 
-      <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {teamMembers.map((member, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center rounded-lg bg-gradient-to-r from-teal-500 to-cyan-600 p-6 shadow-lg"
-          >
-            <img
-              src={member.img}
-              alt={member.name}
-              className="mb-4 h-24 w-24 rounded-full"
-            />
-            <h2 className="text-xl font-semibold">{member.name}</h2>
-            <p className="text-gray-200">{member.role}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+    <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+      Transforming Concepts <br />
+      into Seamless{" "}
+      <span className="text-purple-400">User Experiences</span>
+    </h1>
+
+    <p className="mt-6 text-lg text-gray-300">
+      Hi! I'm Ajay, a Full Stack Developer from India.
+    </p>
+
+    <button className="mt-8 px-6 py-3 border border-purple-400 text-white rounded-lg hover:bg-purple-500 transition duration-300">
+      Show my work <span className="ml-2">🚀</span>
+    </button>
+  </section>
   );
 }
