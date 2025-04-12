@@ -31,7 +31,11 @@ const config = {
       "2xl": ["1.45rem", "2rem"],
       "3xl": ["1.825rem", "2.25rem"],
       "4xl": ["2.2rem", "2.5rem"],
-      "5xl": ["2.95rem", "1"],
+      "5xl": ["3rem", "4rem"],
+  
+      "6xl": ["3.75rem", "1"],
+
+      "hero": ["3.75rem", "5.15625rem"]
     },
     extend: {
       fontFamily: {
