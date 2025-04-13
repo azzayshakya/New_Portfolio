@@ -1,6 +1,35 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const AboutSection = () => {
+  const [visible, setVisible] = useState(false);
+  const AboutSectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisible(true);
+
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.1,
+
+        rootMargin: "-100px 0px",
+      },
+    );
+
+    if (AboutSectionRef.current) {
+      observer.observe(AboutSectionRef.current);
+    }
+
+    return () => {
+      if (observer) {
+        observer.disconnect();
+      }
+    };
+  }, []);
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -10,9 +39,18 @@ const AboutSection = () => {
   };
   return (
     <>
-      <div id="about" className="container w-full px-4 py-16 text-white md:px-16">
+      <div
+        id="about"
+        ref={AboutSectionRef}
+        className="container w-full px-4 py-16 text-white md:px-16"
+      >
         <div className="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-4">
-          <div className="relative col-span-2 flex min-h-[500px] items-end overflow-hidden rounded-2xl p-6 transition-all duration-700 ease-out hover:scale-[1.02]">
+          <div
+            className={`relative col-span-2 flex min-h-[500px] items-end overflow-hidden rounded-2xl p-6 transition-all duration-700 ease-out hover:scale-[1.02] ${
+              visible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
+            style={{ transitionDelay: "100ms" }}
+          >
             <img
               src="/b1.svg"
               alt="Laptop"
@@ -28,7 +66,14 @@ const AboutSection = () => {
           </div>
 
           <div className="col-span-2 flex flex-col gap-6">
-            <div className="bg-primary-light relative flex min-h-[240px] flex-col justify-between rounded-2xl p-6 transition-all duration-700 ease-out hover:scale-[1.02]">
+            <div
+              className={`bg-primary-light relative flex min-h-[240px] flex-col justify-between rounded-2xl p-6 transition-all duration-700 ease-out hover:scale-[1.02] ${
+                visible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+              style={{ transitionDelay: "200ms" }}
+            >
               <h2 className="mb-4 text-2xl font-bold leading-snug">
                 I&apos;m very flexible with time <br />
                 zone communications
@@ -40,7 +85,14 @@ const AboutSection = () => {
               />
             </div>
 
-            <div className="bg-primary-light flex min-h-[240px] flex-col justify-between rounded-2xl p-6 transition-all duration-700 ease-out hover:scale-[1.02]">
+            <div
+              className={`bg-primary-light flex min-h-[240px] flex-col justify-between rounded-2xl p-6 transition-all duration-700 ease-out hover:scale-[1.02] ${
+                visible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+              style={{ transitionDelay: "300ms" }}
+            >
               <p className="mb-1 text-sm text-gray-400">
                 I constantly try to improve
               </p>
@@ -70,7 +122,14 @@ const AboutSection = () => {
 
         <div className="grid gap-6 lg:grid-cols-4">
           <div className="col-span-full flex flex-col gap-6 lg:col-span-2">
-            <div className="bg-primary-light relative overflow-hidden rounded-2xl border border-[#1c1f3f] p-6 transition-all duration-700 ease-out hover:scale-[1.02]">
+            <div
+              className={`bg-primary-light relative overflow-hidden rounded-2xl border border-[#1c1f3f] p-6 transition-all duration-700 ease-out hover:scale-[1.02] ${
+                visible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+              style={{ transitionDelay: "400ms" }}
+            >
               <h2 className="relative z-10 text-2xl font-bold leading-snug md:text-3xl">
                 Tech enthusiast with a <br /> passion for development.
               </h2>
@@ -79,7 +138,14 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <div className="flex flex-col justify-between gap-6 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-800 p-6 transition-all duration-700 ease-out hover:scale-[1.02]">
+            <div
+              className={`flex flex-col justify-between gap-6 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-800 p-6 transition-all duration-700 ease-out hover:scale-[1.02] ${
+                visible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+              style={{ transitionDelay: "500ms" }}
+            >
               <h2 className="text-2xl font-bold leading-snug text-white md:text-3xl">
                 Do you want to start a <br /> project together?
               </h2>
@@ -95,7 +161,12 @@ const AboutSection = () => {
             </div>
           </div>
 
-          <div className="bg-primary-light relative col-span-2 w-full overflow-hidden rounded-2xl border border-[#1c1f3f] p-6 transition-all duration-700 ease-out hover:scale-[1.02]">
+          <div
+            className={`bg-primary-light relative col-span-2 w-full overflow-hidden rounded-2xl border border-[#1c1f3f] p-6 transition-all duration-700 ease-out hover:scale-[1.02] ${
+              visible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
+            style={{ transitionDelay: "600ms" }}
+          >
             <p className="mb-1 w-full text-sm text-gray-400">
               The Inside Scoop
             </p>
