@@ -40,7 +40,7 @@ export const HomeTopBar = ({ navItems, className = "" }) => {
           <a
             key={`link-${idx}`}
             href={navItem.link}
-            className="relative flex items-center space-x-1 text-neutral-600 hover:text-neutral-500 dark:hover:text-neutral-300"
+            className="relative flex items-center space-x-1 text-white"
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             <span className="cursor-pointer text-sm">{navItem.name}</span>
@@ -51,7 +51,6 @@ export const HomeTopBar = ({ navItems, className = "" }) => {
   );
 };
 
-// ✅ PropTypes validation
 HomeTopBar.propTypes = {
   navItems: PropTypes.arrayOf(
     PropTypes.shape({

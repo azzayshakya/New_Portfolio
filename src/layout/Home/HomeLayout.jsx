@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { FaHome, FaInfoCircle, FaEnvelope } from "react-icons/fa"; // example icons
+import { FaHome, FaInfoCircle, FaEnvelope } from "react-icons/fa"; 
 import { HomeTopBar } from "./HomeTopBar";
 
 const navItems = [
