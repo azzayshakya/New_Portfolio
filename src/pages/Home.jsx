@@ -1,5 +1,5 @@
 import AboutSection from "./components/AboutSection";
-import TestimonialsSection from "./components/CommentsSection";
+import CommentsSection from "./components/CommentsSection";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import RecentProjectsSection from "./components/ProjectsSection";
@@ -12,7 +12,7 @@ export default function Home() {
       <HeroSection/>
       <AboutSection/>
       <RecentProjectsSection/>
-      <TestimonialsSection/>
+      <CommentsSection/>
       <WorkExperience/>
       <ContactForm/>
       <Footer/>

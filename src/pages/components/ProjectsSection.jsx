@@ -113,7 +113,7 @@ const RecentProjectsSection = () => {
   };
 
   return (
-    <div className="min-h-screen px-4 py-16 text-white">
+    <div className="min-h-screen container px-4 py-16 text-white">
       <div className="mx-auto mb-16 max-w-6xl text-center">
         <h2 className="text-4xl font-bold md:text-5xl">
           A small selection of{" "}
@@ -121,12 +121,11 @@ const RecentProjectsSection = () => {
         </h2>
       </div>
 
-      {/* Projects Grid */}
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="flex flex-col overflow-hidden rounded-3xl bg-gray-800 bg-opacity-30 transition-all duration-300 hover:scale-[1.02] hover:transform hover:shadow-lg"
+            className="flex flex-col overflow-hidden rounded-3xl bg-gray-800 bg-opacity-30 transition-all duration-700 ease-out hover:scale-[1.02]  hover:shadow-lg"
           >
             <div className="relative h-56 overflow-hidden bg-gray-700">
               <div className="absolute inset-0 flex items-center justify-center text-gray-500">

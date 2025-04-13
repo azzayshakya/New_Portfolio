@@ -1,102 +1,122 @@
-
-const techStack = [
-  "ReactJS", "VueJS", "Express", "NuxtJS", "Typescript", "GraphQL"
-];
+import { useState } from "react";
 
 const AboutSection = () => {
-  return (<>
-  
-    <section className="bg-[#060B27] text-white px-4 py-16 md:px-20 flex flex-col gap-12">
-      {/* ====== TOP SECTION ====== */}
-      <div className="grid md:grid-cols-2 gap-8">
-        {/* Left Image Card */}
-        <div className="rounded-2xl overflow-hidden bg-gradient-to-tr from-[#1e1e2e] to-[#4c2fd7] p-1 shadow-lg">
-          <div className="bg-[#060B27] rounded-2xl">
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("ajayshakya7376@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+  return (
+    <>
+      <div className="container w-full px-4 py-16 text-white md:px-16">
+        <div className="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-4">
+          <div className="relative col-span-2 flex min-h-[500px] items-end overflow-hidden rounded-2xl p-6 transition-all duration-700 ease-out hover:scale-[1.02]">
             <img
-              src="./b1.svg" 
+              src="/b1.svg"
               alt="Laptop"
-              className="w-full h-60 object-cover  "
+              className="absolute inset-0 z-0 h-full w-full object-cover"
             />
-            <div className="p-6">
-              <h2 className="text-xl font-bold">
-                I prioritize client collaboration, fostering open communication
+            <div className="relative z-10">
+              <p className="text-2xl font-semibold text-white lg:text-4xl">
+                I prioritize client <br />
+                collaboration, fostering <br />
+                open communication
+              </p>
+            </div>
+          </div>
+
+          <div className="col-span-2 flex flex-col gap-6">
+            <div className="bg-primary-light relative flex min-h-[240px] flex-col justify-between rounded-2xl p-6 transition-all duration-700 ease-out hover:scale-[1.02]">
+              <h2 className="mb-4 text-2xl font-bold leading-snug">
+                I&apos;m very flexible with time <br />
+                zone communications
               </h2>
+              <img
+                src="https://media.istockphoto.com/id/2030192156/photo/global-data-flow-and-connectivity-east-asia.jpg?s=612x612&w=0&k=20&c=gO-qUI7JRW9z4lG3jhNbmDMrLhOPRmuH7R5eG-Acq8A="
+                alt="Globe"
+                className="absolute right-0 top-0 h-full w-full rounded-2xl opacity-40"
+              />
+            </div>
+
+            <div className="bg-primary-light flex min-h-[240px] flex-col justify-between rounded-2xl p-6 transition-all duration-700 ease-out hover:scale-[1.02]">
+              <p className="mb-1 text-sm text-gray-400">
+                I constantly try to improve
+              </p>
+              <h3 className="mb-4 text-2xl font-bold">My tech stack</h3>
+              <div className="grid grid-cols-3 gap-2 text-sm sm:grid-cols-4">
+                {[
+                  "ReactJS",
+                  "TanStack",
+                  "Express",
+                  "MongoDB",
+                  "JavaScript",
+                  "Multer",
+                  "Zod",
+                  "Tailwind",
+                ].map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-lg bg-secondary px-3 py-2 text-center text-white"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Right Two Boxes */}
-        <div className="flex flex-col gap-8">
-          {/* Timezone Card */}
-          <div className="bg-[#101434] rounded-2xl p-6 flex flex-col items-center shadow-lg">
-            <img
-              src="/globe-image.png" // Replace with actual path
-              alt="Globe"
-              className="w-28 h-28 object-contain mb-4"
-            />
-            <h2 className="text-center text-lg font-bold">
-              I'm very flexible with time zone communications
-            </h2>
-          </div>
+        <div className="grid gap-6 lg:grid-cols-4">
+          <div className="col-span-full flex flex-col gap-6 lg:col-span-2">
+            <div className="bg-primary-light relative overflow-hidden rounded-2xl border border-[#1c1f3f] p-6 transition-all duration-700 ease-out hover:scale-[1.02]">
+              <h2 className="relative z-10 text-2xl font-bold leading-snug md:text-3xl">
+                Tech enthusiast with a <br /> passion for development.
+              </h2>
+              <div className="absolute bottom-0 right-4 z-0 h-full">
+                <img src="gsap.svg" alt="" className="h-full w-full" />
+              </div>
+            </div>
 
-          {/* Tech Stack Card */}
-          <div className="bg-[#101434] rounded-2xl p-6 shadow-lg">
-            <p className="text-sm text-gray-400">I constantly try to improve</p>
-            <h2 className="text-xl font-bold mb-4">My tech stack</h2>
-            <div className="flex flex-wrap gap-3">
-              {techStack.map((tech) => (
-                <span
-                  key={tech}
-                  className="bg-[#1d1f3a] px-4 py-2 rounded-lg text-sm font-medium"
-                >
-                  {tech}
+            <div className="flex flex-col justify-between gap-6 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-800 p-6 transition-all duration-700 ease-out hover:scale-[1.02]">
+              <h2 className="text-2xl font-bold leading-snug text-white md:text-3xl">
+                Do you want to start a <br /> project together?
+              </h2>
+              <button
+                onClick={handleCopy}
+                className="flex w-fit items-center gap-2 rounded-lg border border-white bg-muted px-9 py-2 text-white transition hover:bg-white hover:text-black"
+              >
+                📋{" "}
+                <span>
+                  {copied ? "Email copied to dashboard!" : "Get my email"}
                 </span>
-              ))}
+              </button>
+            </div>
+          </div>
+
+          <div className="bg-primary-light relative col-span-2 w-full overflow-hidden rounded-2xl border border-[#1c1f3f] p-6 transition-all duration-700 ease-out hover:scale-[1.02]">
+            <p className="mb-1 w-full text-sm text-gray-400">
+              The Inside Scoop
+            </p>
+            <h2 className="relative z-10 mb-4 w-full text-3xl font-bold">
+              Currently On a Mission to <br />
+              Build Something That <br />
+              Matters
+            </h2>
+
+            <div className="absolute bottom-0 right-0">
+              <img
+                src="/b5.svg"
+                alt="Code Background"
+                className="w-48 object-contain md:w-64 lg:w-72"
+              />
             </div>
           </div>
         </div>
       </div>
-
-      {/* ====== BOTTOM SECTION ====== */}
-      <div className="grid md:grid-cols-2 gap-8">
-        {/* Tech Enthusiast Quote */}
-        <div className="bg-[#101434] rounded-2xl p-6 shadow-md flex items-center justify-center">
-          <h2 className="text-xl font-bold text-center">
-            Tech enthusiast with a passion for development.
-          </h2>
-        </div>
-
-        {/* Mission Statement with Code BG */}
-        <div className="relative bg-[#101434] rounded-2xl p-6 shadow-md overflow-hidden">
-          <img
-            src="/newsection.png" // Replace with actual path
-            alt="Code Background"
-            className="absolute top-0 left-0 w-full h-full object-cover opacity-10"
-          />
-          <div className="relative z-10">
-            <p className="text-sm text-gray-400">The Inside Scoop</p>
-            <h2 className="text-2xl font-bold mt-2">
-              Currently On a Mission to Build Something That Matters
-            </h2>
-          </div>
-        </div>
-      </div>
-
-      {/* ====== CONTACT CTA ====== */}
-      <div className="rounded-2xl bg-gradient-to-br from-[#6a11cb] to-[#2575fc] p-6 flex flex-col items-center justify-center text-center shadow-xl">
-        <h2 className="text-2xl font-bold mb-4 text-white">
-          Do you want to start a project together?
-        </h2>
-        <button className="mt-2 bg-white text-black px-6 py-2 rounded-lg font-semibold flex items-center gap-2 hover:bg-gray-200 transition">
-          <span>📧</span> Copy my email address
-        </button>
-      </div>
-    </section>
-
-
-
-
- </> );
+    </>
+  );
 };
 
 export default AboutSection;

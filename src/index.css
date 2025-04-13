@@ -17,6 +17,7 @@
     --popover-foreground: #e5e5e5;
 
     --primary: #0f0f1a;
+    --primary-light: #111228;
     /* New primary background */
     --primary-foreground: #ffffff;
 
@@ -58,6 +59,7 @@
     --popover-foreground: #f8fafc;
 
     --primary: #0f0f1a;
+    --primary-light: #111228;
     --primary-foreground: #ffffff;
 
     --secondary: #c084fc;

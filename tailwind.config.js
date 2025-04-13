@@ -32,10 +32,10 @@ const config = {
       "3xl": ["1.825rem", "2.25rem"],
       "4xl": ["2.2rem", "2.5rem"],
       "5xl": ["3rem", "4rem"],
-  
+
       "6xl": ["3.75rem", "1"],
 
-      "hero": ["3.75rem", "5.15625rem"]
+      hero: ["3.75rem", "5.15625rem"],
     },
     extend: {
       fontFamily: {
@@ -64,6 +64,7 @@ const config = {
         "card-foreground": "var(--card-foreground)",
         navyblue: "var(--navy-blue)",
         primary: "var(--primary)",
+        "primary-light": "var(--primary-light)",
         "primary-foreground": "var(--primary-foreground)",
         secondary: "var(--secondary)",
         "secondary-foreground": "var(--secondary-foreground)",
