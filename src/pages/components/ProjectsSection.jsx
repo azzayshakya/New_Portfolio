@@ -1,103 +1,119 @@
+import {
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiRedux,
+  SiTypescript,
+  SiFirebase,
+  SiMongodb,
+  SiTailwindcss,
+  SiGraphql,
+  SiBootstrap,
+} from "react-icons/si";
+import { FaCloud } from "react-icons/fa";
+import { MdUploadFile } from "react-icons/md";
+import { TbBrandSocketIo } from "react-icons/tb";
+import { FaRobot } from "react-icons/fa";
+
 const RecentProjectsSection = () => {
   const projects = [
     {
-      id: 1,
-      title: "Foodii - The Future of Online Food Delivery",
+      id: 4,
+      title: "WeChat - Team Collaboration with AI Assistant",
       description:
-        "A next-gen cloud kitchen platform that connects food lovers with top-quality, authentic cuisines from around the world.",
-      image: "/path-to-your-image.jpg",
-      technologies: ["react", "node", "typescript", "firebase", "material-ui"],
-      liveLink: "https://foodii-example.com",
+        "WeChat is a real-time team collaboration tool where users can create projects, invite teammates, and chat instantly. It includes an AI assistant that helps generate messages, manage tasks, and boost productivity. It’s a fully responsive app with smooth UI, secure login, and built for seamless teamwork.",
+      image: "/images/wechat.jpg",
+      technologies: ["react", "node", "socketio", "tailwind", "gemini"],
+      liveLink: "https://wechat-teal.vercel.app",
     },
     {
       id: 2,
       title: "Zobs - Your Gateway to Career Success",
       description:
-        "A smart job portal designed to bridge the gap between job seekers and employers with AI matching technology.",
-      image: "/path-to-your-image.jpg",
-      technologies: ["next", "node", "typescript", "tailwind", "graphql"],
-      liveLink: "https://zobs-example.com",
+        "Zobs is a smart job portal that uses AI-based matching to connect job seekers with the right employers. With features like role-based dashboards, resume parsing, and personalized recommendations, it's built to streamline the hiring process. Fully responsive with clean UI and secure authentication.",
+      image: "/Zobs.png",
+      technologies: ["react", "node", "multer", "mongodb", "redux"],
+      liveLink: "https://zobs.vercel.app",
     },
     {
       id: 3,
-      title: "Project Three - Coming Soon",
+      title: "AppointMate - Book Appointments with Ease",
       description:
-        "Your third project description will go here. This is a placeholder for your future amazing project.",
-      image: "/path-to-your-image.jpg",
-      technologies: ["react", "node", "mongodb", "express", "bootstrap"],
-      liveLink: "https://example.com",
+        "AppointMate is an intuitive appointment booking system where students can easily schedule meetings with teachers based on subject and availability. It features dynamic scheduling, role-based access, and real-time status updates. The UI is sleek, mobile-responsive, and backed with strong form validation and authentication.",
+      image: "/Appointmate.png",
+      technologies: ["tailwind", "node", "mongodb", "express", "redux"],
+      liveLink: "https://appointmate-example.com",
     },
     {
-      id: 4,
-      title: "Project Three - Coming Soon",
+      id: 1,
+      title: "Foodii - The Future of Online Food Delivery",
       description:
-        "Your third project description will go here. This is a placeholder for your future amazing project.",
-      image: "/path-to-your-image.jpg",
-      technologies: ["react", "node", "mongodb", "express", "bootstrap"],
-      liveLink: "https://example.com",
+        "Foodii is a modern cloud kitchen platform that bridges the gap between local chefs and food lovers. It enables users to discover, order, and track delicious meals from a variety of kitchens. Built with a sleek UI, real-time updates, and robust authentication, it's designed to scale and serve at high volume.",
+      image: "/Foodiii.png",
+      technologies: ["cloudinary", "node", "react", "mongodb", "multer"],
+      liveLink: "https://appointmate-mern.vercel.app",
     },
   ];
 
   const techIcons = {
     react: (
-      <div className="text-xs flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500">
-        <span>⚛️</span>
-      </div>
+      <SiReact className="h-10 w-10 rounded-full border bg-primary p-2 text-cyan-500" />
     ),
     next: (
-      <div className="text-xs flex h-8 w-8 items-center justify-center rounded-full bg-black text-white">
-        <span>N</span>
-      </div>
+      <SiNextdotjs className="h-10 w-10 rounded-full border bg-primary p-2 text-black" />
     ),
     node: (
-      <div className="text-xs flex h-8 w-8 items-center justify-center rounded-full bg-green-600">
-        <span>N</span>
-      </div>
-    ),
-    typescript: (
-      <div className="text-xs flex h-8 w-8 items-center justify-center rounded-full bg-blue-500">
-        <span>TS</span>
-      </div>
-    ),
-    firebase: (
-      <div className="text-xs flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500">
-        <span>🔥</span>
-      </div>
-    ),
-    mongodb: (
-      <div className="text-xs flex h-8 w-8 items-center justify-center rounded-full bg-green-500">
-        <span>M</span>
-      </div>
-    ),
-    "material-ui": (
-      <div className="text-xs flex h-8 w-8 items-center justify-center rounded-full bg-blue-600">
-        <span>M</span>
-      </div>
-    ),
-    tailwind: (
-      <div className="text-xs flex h-8 w-8 items-center justify-center rounded-full bg-cyan-400">
-        <span>TW</span>
-      </div>
-    ),
-    graphql: (
-      <div className="text-xs flex h-8 w-8 items-center justify-center rounded-full bg-pink-600">
-        <span>G</span>
-      </div>
+      <SiNodedotjs className="h-10 w-10 rounded-full border bg-primary p-2 text-green-600" />
     ),
     express: (
-      <div className="text-xs flex h-8 w-8 items-center justify-center rounded-full bg-gray-700">
-        <span>Ex</span>
-      </div>
+      <SiExpress className="h-10 w-10 rounded-full border bg-primary p-2 text-white" />
+    ),
+    redux: (
+      <SiRedux className="h-10 w-10 rounded-full border bg-primary p-2 text-purple-600" />
+    ),
+    typescript: (
+      <SiTypescript className="h-10 w-10 rounded-full border bg-primary p-2 text-blue-500" />
+    ),
+    firebase: (
+      <SiFirebase className="h-10 w-10 rounded-full border bg-primary p-2 text-yellow-500" />
+    ),
+    mongodb: (
+      <SiMongodb className="h-10 w-10 rounded-full border bg-primary p-2 text-green-500" />
+    ),
+    tailwind: (
+      <SiTailwindcss className="h-10 w-10 rounded-full border bg-primary p-2 text-cyan-400" />
+    ),
+    graphql: (
+      <SiGraphql className="h-10 w-10 rounded-full border bg-primary p-2 text-pink-600" />
     ),
     bootstrap: (
-      <div className="text-xs flex h-8 w-8 items-center justify-center rounded-full bg-purple-600">
-        <span>B</span>
+      <SiBootstrap className="h-10 w-10 rounded-full border bg-primary p-2 text-purple-600" />
+    ),
+    socketio: (
+      <TbBrandSocketIo className="h-10 w-10 rounded-full border bg-primary p-2 text-white" />
+    ),
+    gemini: (
+      <FaRobot className="h-10 w-10 rounded-full border bg-primary p-2 text-indigo-500" />
+    ),
+
+    zustand: (
+      <div className="h-10 w-10 rounded-full border bg-orange-400 bg-primary p-2">
+        <span role="img" aria-label="Zustand">
+          🐻
+        </span>
       </div>
+    ),
+    cloudinary: (
+      <FaCloud className="h-10 w-10 rounded-full border bg-primary p-2 text-blue-400" />
+    ),
+    multer: (
+      <MdUploadFile className="h-10 w-10 rounded-full border bg-primary p-2 text-red-500" />
     ),
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 px-4 py-16 text-white">
+    <div className="min-h-screen px-4 py-16 text-white">
       <div className="mx-auto mb-16 max-w-6xl text-center">
         <h2 className="text-4xl font-bold md:text-5xl">
           A small selection of{" "}
@@ -113,9 +129,12 @@ const RecentProjectsSection = () => {
             className="flex flex-col overflow-hidden rounded-3xl bg-gray-800 bg-opacity-30 transition-all duration-300 hover:scale-[1.02] hover:transform hover:shadow-lg"
           >
             <div className="relative h-56 overflow-hidden bg-gray-700">
-              {/*  replace it with actual images  */}
               <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                Project Image Placeholder
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
               </div>
             </div>
 
