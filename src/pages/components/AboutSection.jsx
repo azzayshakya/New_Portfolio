@@ -10,7 +10,7 @@ const AboutSection = () => {
   };
   return (
     <>
-      <div className="container w-full px-4 py-16 text-white md:px-16">
+      <div id="about" className="container w-full px-4 py-16 text-white md:px-16">
         <div className="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-4">
           <div className="relative col-span-2 flex min-h-[500px] items-end overflow-hidden rounded-2xl p-6 transition-all duration-700 ease-out hover:scale-[1.02]">
             <img

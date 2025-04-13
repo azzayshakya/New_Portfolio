@@ -5,7 +5,9 @@ import { HomeTopBar } from "./HomeTopBar";
 const navItems = [
   { name: "Home", link: "#home", icon: <FaHome /> },
   { name: "About", link: "#about", icon: <FaInfoCircle /> },
-  { name: "Contact", link: "#contact", icon: <FaEnvelope /> },
+  { name: "Work", link: "#work", icon: <FaEnvelope /> },
+  { name: "Projects", link: "#projects", icon: <FaInfoCircle /> },
+  { name: "Contact ", link: "#contact", icon: <FaInfoCircle /> },
 ];
 
 const HomeUILayout = () => {

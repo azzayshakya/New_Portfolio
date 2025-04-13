@@ -84,7 +84,8 @@ export default function WorkExperience() {
 
   return (
     <div
-      ref={experienceRef}
+      ref={experienceRef} 
+      id='work'
       className="w-full bg-[#0f0f1a] py-16 md:py-24 relative overflow-hidden"
     >
       <div className="container px-4 sm:px-6 relative">

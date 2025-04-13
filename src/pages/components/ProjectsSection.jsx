@@ -113,7 +113,7 @@ const RecentProjectsSection = () => {
   };
 
   return (
-    <div className="min-h-screen container px-4 py-16 text-white">
+    <div id="projects" className="min-h-screen container px-4 py-16 text-white">
       <div className="mx-auto mb-16 max-w-6xl text-center">
         <h2 className="text-4xl font-bold md:text-5xl">
           A small selection of{" "}

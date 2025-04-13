@@ -3,9 +3,9 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden pb-20 pt-36"
+      className="container relative w-full overflow-hidden pb-20 pt-40"
     >
-      <div className="relative z-10 flex flex-col items-center justify-center px-6 text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center px-6 text-center ">
         <p className="text-xs max-w-90 mb-3 uppercase tracking-widest text-blue-100">
           Creating Modern & Efficient Applications
         </p>
