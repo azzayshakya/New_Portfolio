@@ -10,25 +10,36 @@ import {
   SiTailwindcss,
   SiGraphql,
   SiBootstrap,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
 } from "react-icons/si";
-import { FaCloud } from "react-icons/fa";
+import { FaCloud, FaRobot } from "react-icons/fa";
 import { MdUploadFile } from "react-icons/md";
 import { TbBrandSocketIo } from "react-icons/tb";
-import { FaRobot } from "react-icons/fa";
 
 const RecentProjectsSection = () => {
   const projects = [
     {
-      id: 4,
+      id: 1,
       title: "WeChat - Team Collaboration with AI Assistant",
       description:
         "WeChat is a real-time team collaboration tool where users can create projects, invite teammates, and chat instantly. It includes an AI assistant that helps generate messages, manage tasks, and boost productivity. It’s a fully responsive app with smooth UI, secure login, and built for seamless teamwork.",
-      image: "/images/wechat.jpg",
+      image: "/WeChat.png",
       technologies: ["react", "node", "socketio", "tailwind", "gemini"],
       liveLink: "https://wechat-teal.vercel.app",
     },
     {
       id: 2,
+      title: "Foodii - The Future of Online Food Delivery",
+      description:
+        "Foodii is a modern cloud kitchen platform that bridges the gap between local chefs and food lovers. It enables users to discover, order, and track delicious meals from a variety of kitchens. Built with a sleek UI, real-time updates, and robust authentication, it's designed to scale and serve at high volume.",
+      image: "/Foodiii.png",
+      technologies: ["cloudinary", "node", "react", "mongodb", "multer"],
+      liveLink: "https://foodiii.vercel.app/",
+    },
+    {
+      id: 3,
       title: "Zobs - Your Gateway to Career Success",
       description:
         "Zobs is a smart job portal that uses AI-based matching to connect job seekers with the right employers. With features like role-based dashboards, resume parsing, and personalized recommendations, it's built to streamline the hiring process. Fully responsive with clean UI and secure authentication.",
@@ -37,22 +48,32 @@ const RecentProjectsSection = () => {
       liveLink: "https://zobs.vercel.app",
     },
     {
-      id: 3,
+      id: 4,
       title: "AppointMate - Book Appointments with Ease",
       description:
         "AppointMate is an intuitive appointment booking system where students can easily schedule meetings with teachers based on subject and availability. It features dynamic scheduling, role-based access, and real-time status updates. The UI is sleek, mobile-responsive, and backed with strong form validation and authentication.",
       image: "/Appointmate.png",
       technologies: ["tailwind", "node", "mongodb", "express", "redux"],
-      liveLink: "https://appointmate-example.com",
+      liveLink: "https://appointmate-mern.vercel.app/",
+    },
+
+    {
+      id: 5,
+      title: "Zomato UI Clone - Pixel Perfect Food Delivery Interface",
+      description:
+        "A high-fidelity frontend clone of Zomato's food delivery platform created purely with HTML and CSS. This responsive and visually rich interface showcases restaurant cards, menu layouts, and a clean user flow—all crafted to mimic the real-world app experience. Developed to strengthen UI design skills and frontend layout techniques.",
+      image: "/ZomatoClone.png",
+      technologies: ["html", "css", "javascript"],
+      liveLink: "https://azzay-zomato-clone.vercel.app/",
     },
     {
-      id: 1,
-      title: "Foodii - The Future of Online Food Delivery",
+      id: 6,
+      title: "Modern Login UI - Sleek & Interactive Landing Page",
       description:
-        "Foodii is a modern cloud kitchen platform that bridges the gap between local chefs and food lovers. It enables users to discover, order, and track delicious meals from a variety of kitchens. Built with a sleek UI, real-time updates, and robust authentication, it's designed to scale and serve at high volume.",
-      image: "/Foodiii.png",
-      technologies: ["cloudinary", "node", "react", "mongodb", "multer"],
-      liveLink: "https://appointmate-mern.vercel.app",
+        "A stylish and fully responsive login landing page designed with a modern aesthetic. Built using HTML, CSS, JavaScript, and Tailwind CSS, the interface includes interactive elements, smooth animations, and strong visual hierarchy. This project demonstrates advanced form UI/UX patterns and frontend polish.",
+      image: "/loginpage.png",
+      technologies: ["html", "css", "javascript"],
+      liveLink: "https://github.com/azzayshakya",
     },
   ];
 
@@ -110,10 +131,19 @@ const RecentProjectsSection = () => {
     multer: (
       <MdUploadFile className="h-10 w-10 rounded-full border bg-primary p-2 text-red-500" />
     ),
+    javascript: (
+      <SiJavascript className="h-10 w-10 rounded-full border bg-primary p-2 text-yellow-400" />
+    ),
+    html: (
+      <SiHtml5 className="h-10 w-10 rounded-full border bg-primary p-2 text-orange-500" />
+    ),
+    css: (
+      <SiCss3 className="h-10 w-10 rounded-full border bg-primary p-2 text-blue-500" />
+    ),
   };
 
   return (
-    <div id="projects" className="min-h-screen container px-4 py-16 text-white">
+    <div id="projects" className="container min-h-screen px-4 py-16 text-white">
       <div className="mx-auto mb-16 max-w-6xl text-center">
         <h2 className="text-4xl font-bold md:text-5xl">
           A small selection of{" "}
@@ -125,14 +155,14 @@ const RecentProjectsSection = () => {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="flex flex-col overflow-hidden rounded-3xl bg-gray-800 bg-opacity-30 transition-all duration-700 ease-out hover:scale-[1.02]  hover:shadow-lg"
+            className="flex flex-col overflow-hidden rounded-3xl bg-gray-800 bg-opacity-30 transition-all duration-700 ease-out hover:scale-[1.02] hover:shadow-lg"
           >
             <div className="relative h-56 overflow-hidden bg-gray-700">
               <div className="absolute inset-0 flex items-center justify-center text-gray-500">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full"
                 />
               </div>
             </div>

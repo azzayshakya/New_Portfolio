@@ -1,13 +1,12 @@
 import { Outlet } from "react-router-dom";
-import { FaHome, FaInfoCircle, FaEnvelope } from "react-icons/fa"; 
 import { HomeTopBar } from "./HomeTopBar";
 
 const navItems = [
-  { name: "Home", link: "#home", icon: <FaHome /> },
-  { name: "About", link: "#about", icon: <FaInfoCircle /> },
-  { name: "Work", link: "#work", icon: <FaEnvelope /> },
-  { name: "Projects", link: "#projects", icon: <FaInfoCircle /> },
-  { name: "Contact ", link: "#contact", icon: <FaInfoCircle /> },
+  { name: "Home", link: "#home" },
+  { name: "About", link: "#about" },
+  { name: "Work", link: "#work" },
+  { name: "Projects", link: "#projects" },
+  { name: "Contact ", link: "#contact" },
 ];
 
 const HomeUILayout = () => {

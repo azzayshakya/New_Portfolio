@@ -99,7 +99,7 @@ export default function Footer() {
         >
           <div className="mb-6 md:mb-0">
             <p className="text-gray-400">
-              Copyright © {currentYear} Ajay kr. Shakya
+              Copyright © {currentYear} Ajay Kr. Shakya
             </p>
           </div>
 
