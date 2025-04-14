@@ -169,86 +169,86 @@ const RecentProjectsSection = () => {
   };
 
   return (
-    <div id="projects"   ref={sectionRef} className="container min-h-screen px-4 py-16 text-white">
-      <div className="mx-auto mb-16 max-w-6xl text-center">
-      <h2
-        className={`text-4xl md:text-5xl font-bold text-center mb-16 transition-all duration-700 ease-out ${
-          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
-        style={{ transitionDelay: "100ms" }}
-      >
-          A small selection of{" "}
-          <span className="text-purple-400">recent projects</span>
-        </h2>
-      </div>
+    <div id="projects"ref={sectionRef} className="container min-h-screen px-4 py-16 text-white">
+    <div className="mx-auto mb-16 max-w-6xl text-center">
+      <h2 className={`text-4xl font-bold md:text-5xl         transition-all duration-700 ease-out ${
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+            style={{ transitionDelay:"100ms" }}
+          >
+        A small selection of{" "}
+        <span className="text-purple-400">recent projects</span>
+      </h2>
+    </div>
 
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project,index) => (
-          <div
-            key={project.id}
-            className={`relative rounded-xl overflow-hidden bg-[#1f1f2e] p-6 shadow-lg border border-[#3f3f46]/30 backdrop-blur-sm transition-all duration-700 ease-out ${
+    <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project,index) => (
+        <div
+          key={project.id}
+          className={`flex flex-col overflow-hidden rounded-3xl bg-gray-800 bg-opacity-30  hover:scale-[1.02] hover:shadow-lg"
+        transition-all duration-700 ease-out ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
             style={{ transitionDelay: `${(index + 1) * 150}ms` }}
           >
-            <div className="relative h-56 overflow-hidden bg-gray-700">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="absolute inset-0 h-full w-full"
-                />
-              </div>
-            </div>
-
-            <div className="flex-grow p-6">
-              <h3 className="mb-3 text-xl font-bold">{project.title}</h3>
-              <p className="mb-6 line-clamp-3 text-gray-300">
-                {project.description}
-              </p>
-            </div>
-
-            <div className="p-6 pt-0">
-              <div className="flex items-center justify-between">
-                <div className="flex -space-x-2">
-                  {project.technologies.slice(0, 5).map((tech, index) => (
-                    <div
-                      key={index}
-                      className="transition-transform hover:z-10 hover:scale-110 hover:transform"
-                    >
-                      {techIcons[tech]}
-                    </div>
-                  ))}
-                </div>
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center space-x-1 text-purple-400"
-                >
-                  <span>Check Live Site</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 transform transition-transform group-hover:translate-x-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </a>
-              </div>
+          <div className="relative h-56 overflow-hidden bg-gray-700">
+            <div className="absolute inset-0 flex items-center justify-center text-gray-500">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="absolute inset-0 h-full w-full"
+              />
             </div>
           </div>
-        ))}
-      </div>
+
+          <div className="flex-grow p-6">
+            <h3 className="mb-3 text-xl font-bold">{project.title}</h3>
+            <p className="mb-6 line-clamp-3 text-gray-300">
+              {project.description}
+            </p>
+          </div>
+
+          <div className="p-6 pt-0">
+            <div className="flex items-center justify-between">
+              <div className="flex -space-x-2">
+                {project.technologies.slice(0, 5).map((tech, index) => (
+                  <div
+                    key={index}
+                    className="transition-transform hover:z-10 hover:scale-110 hover:transform"
+                  >
+                    {techIcons[tech]}
+                  </div>
+                ))}
+              </div>
+              <a
+                href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center space-x-1 text-purple-400"
+              >
+                <span>Check Live Site</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 transform transition-transform group-hover:translate-x-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
-  );
+  </div>
+);
 };
 
 export default RecentProjectsSection;

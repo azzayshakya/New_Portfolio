@@ -39,7 +39,7 @@ const AboutSection = () => {
   };
   return (
     <>
-      <div
+      <section 
         id="about"
         ref={AboutSectionRef}
         className="container w-full px-4 py-16 text-white md:px-16"
@@ -74,10 +74,10 @@ const AboutSection = () => {
               }`}
               style={{ transitionDelay: "200ms" }}
             >
-              <h2 className="mb-4 text-2xl font-bold leading-snug">
+              <h3 className="mb-4 text-2xl font-bold leading-snug">
                 I&apos;m very flexible with time <br />
                 zone communications
-              </h2>
+              </h3>
               <img
                 src="https://media.istockphoto.com/id/2030192156/photo/global-data-flow-and-connectivity-east-asia.jpg?s=612x612&w=0&k=20&c=gO-qUI7JRW9z4lG3jhNbmDMrLhOPRmuH7R5eG-Acq8A="
                 alt="Globe"
@@ -179,13 +179,13 @@ const AboutSection = () => {
             <div className="absolute bottom-0 right-0">
               <img
                 src="/b5.svg"
-                alt="Code Background"
+              alt="Illustration of code flow in background"
                 className="w-48 object-contain md:w-64 lg:w-72"
               />
             </div>
           </div>
         </div>
-      </div>
+      </section >
     </>
   );
 };

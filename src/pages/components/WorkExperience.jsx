@@ -23,7 +23,7 @@ export default function WorkExperience() {
     }
 
     return () => {
-      observer.disconnect();
+      // observer.disconnect();
     };
   }, []);
 

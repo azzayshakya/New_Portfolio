@@ -52,8 +52,9 @@ export default function HeroSection() {
           }`}
           style={{ transitionDelay: "200ms" }}
         >
-          Transforming Concepts <br />
-          into Seamless <span className="text-secondary">User Experiences</span>
+          Turning caffeine &<br />
+          code into seamless{" "}
+          <span className="text-secondary">User Experiences</span>
         </h1>
 
         <p
@@ -62,7 +63,7 @@ export default function HeroSection() {
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          Hi! I am Ajay, a Full Stack Developer from India.
+          I&apos;m Ajay — a passionate Full Stack Developer from India
         </p>
 
         <button
@@ -72,7 +73,7 @@ export default function HeroSection() {
           style={{ transitionDelay: "400ms" }}
         >
           <a href="#projects">
-            Show my work <span className="ml-2">🚀</span>
+            Explore My Work <span className="ml-2">🚀</span>
           </a>
         </button>
       </div>
