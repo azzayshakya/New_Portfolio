@@ -17,8 +17,34 @@ import {
 import { FaCloud, FaRobot } from "react-icons/fa";
 import { MdUploadFile } from "react-icons/md";
 import { TbBrandSocketIo } from "react-icons/tb";
+import { useEffect, useRef, useState } from "react";
 
 const RecentProjectsSection = () => {
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "-100px 0px",
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
   const projects = [
     {
       id: 1,
@@ -143,19 +169,27 @@ const RecentProjectsSection = () => {
   };
 
   return (
-    <div id="projects" className="container min-h-screen px-4 py-16 text-white">
+    <div id="projects"   ref={sectionRef} className="container min-h-screen px-4 py-16 text-white">
       <div className="mx-auto mb-16 max-w-6xl text-center">
-        <h2 className="text-4xl font-bold md:text-5xl">
+      <h2
+        className={`text-4xl md:text-5xl font-bold text-center mb-16 transition-all duration-700 ease-out ${
+          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+        style={{ transitionDelay: "100ms" }}
+      >
           A small selection of{" "}
           <span className="text-purple-400">recent projects</span>
         </h2>
       </div>
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
+        {projects.map((project,index) => (
           <div
             key={project.id}
-            className="flex flex-col overflow-hidden rounded-3xl bg-gray-800 bg-opacity-30 transition-all duration-700 ease-out hover:scale-[1.02] hover:shadow-lg"
+            className={`relative rounded-xl overflow-hidden bg-[#1f1f2e] p-6 shadow-lg border border-[#3f3f46]/30 backdrop-blur-sm transition-all duration-700 ease-out ${
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+            style={{ transitionDelay: `${(index + 1) * 150}ms` }}
           >
             <div className="relative h-56 overflow-hidden bg-gray-700">
               <div className="absolute inset-0 flex items-center justify-center text-gray-500">

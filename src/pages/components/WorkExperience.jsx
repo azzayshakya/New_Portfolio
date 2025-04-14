@@ -29,9 +29,9 @@ export default function WorkExperience() {
 
   const experiences = [
     {
-      title: "Frontend Engineer Intern",
-      description: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
-      icon: "/frontend-engineer-icon.png",
+      title: "Web Developer Intern - InternPe",
+      description: "Contributed to building responsive web applications using React.js and Tailwind CSS. Implemented reusable components and improved UI interactivity to enhance user experience.",
+      icon: "/frontend-engineer-icon",
       iconFallback: (
         <div className="bg-gradient-to-r from-pink-500 to-orange-400 p-3 rounded-full w-16 h-16 flex items-center justify-center">
           <svg width="40" height="40" fill="none" viewBox="0 0 24 24">
@@ -42,8 +42,8 @@ export default function WorkExperience() {
       )
     },
     {
-      title: "Mobile App Dev - JSM Tech",
-      description: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+      title: "Jr. Developer - Aventesia",
+      description: "Developed a cross-platform mobile app using React Native. Integrated RESTful APIs, enhanced UI performance, and collaborated with the backend team for seamless data flow.",
       icon: "/mobile-app-icon.png",
       iconFallback: (
         <div className="bg-gradient-to-r from-orange-400 to-pink-500 p-3 rounded-full w-16 h-16 flex items-center justify-center">
@@ -55,8 +55,8 @@ export default function WorkExperience() {
       )
     },
     {
-      title: "Freelance App Dev Project",
-      description: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+      title: "Jr. Developer - Elmech India Engineers",
+      description: "Spearheaded the end-to-end development of a mobile solution for a client. Designed UI/UX, implemented core features, and deployed the app on both Android and iOS stores.",
       icon: "/freelance-app-icon.png", 
       iconFallback: (
         <div className="bg-gradient-to-r from-pink-300 to-orange-200 p-3 rounded-full w-16 h-16 flex items-center justify-center">
@@ -68,8 +68,8 @@ export default function WorkExperience() {
       )
     },
     {
-      title: "Lead Frontend Developer",
-      description: "Developed and maintained user-facing features using modern frontend technologies.",
+      title: "Lead  Developer - Personal GitHub Projects",
+      description: "Designed and built a series of modern, responsive UI projects hosted on GitHub. Demonstrated expertise in component-based architecture, animations, and real-world UX patterns.",
       icon: "/lead-frontend-icon.png",
       iconFallback: (
         <div className="bg-gradient-to-r from-purple-400 to-orange-400 p-3 rounded-full w-16 h-16 flex items-center justify-center">
@@ -81,6 +81,7 @@ export default function WorkExperience() {
       )
     }
   ];
+  
 
   return (
     <div
@@ -111,7 +112,7 @@ export default function WorkExperience() {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 via-pink-500/20 to-orange-500/30 rounded-xl blur-xl"></div>
 
               {/* Card container */}
-              <div className="relative bg-[#1a1a2e] rounded-xl p-6 md:p-8 flex items-start gap-4 border border-[#3f3f46]/30 backdrop-blur-sm">
+              <div className="relative bg-primary h-full rounded-xl p-6 md:p-8 flex items-start gap-4 border border-[#3f3f46]/30 backdrop-blur-sm">
                 {/* Light overlay */}
                 <div
                   className="absolute inset-0 pointer-events-none before:absolute before:w-40 before:h-40 before:content-[''] before:bg-gradient-to-br before:from-purple-500/20 before:via-pink-500/10 before:to-transparent before:rounded-full before:blur-xl before:opacity-30 before:animate-pulse-soft"
