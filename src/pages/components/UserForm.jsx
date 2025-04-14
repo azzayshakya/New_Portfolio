@@ -48,7 +48,7 @@ export default function ContactForm() {
       className="container relative w-full overflow-hidden py-16 md:py-24"
       ref={ContactFormRef}
     >
-      <div className="mx-auto px-4 sm:px-6">
+      <div className="mx-auto px-0 sm:px-6">
         <div
           className={`mx-auto max-w-3xl transition-all duration-700 ease-out`}
         >
