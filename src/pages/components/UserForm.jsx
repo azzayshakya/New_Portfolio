@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import { useDefineGetInTouchForm } from "../constants/useDefineGetInTouchForm";
+import useSubmitGetInTouchForm from "../constants/useSubmitGetInTouchForm";
 
 export default function ContactForm() {
   const [visible, setVisible] = useState(false);
@@ -9,13 +11,11 @@ export default function ContactForm() {
       (entries) => {
         if (entries[0].isIntersecting) {
           setVisible(true);
-
           observer.disconnect();
         }
       },
       {
         threshold: 0.1,
-
         rootMargin: "-100px 0px",
       },
     );
@@ -24,17 +24,22 @@ export default function ContactForm() {
       observer.observe(ContactFormRef.current);
     }
 
-    return () => {
-      if (observer) {
-        observer.disconnect();
-      }
-    };
+    return () => observer.disconnect();
   }, []);
 
-  const handleChange = () => {};
+  const { form, isSubmitting } = useDefineGetInTouchForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = form;
+  const { SubmitGetInTouchFormMutation, isSubmissionPending } =
+    useSubmitGetInTouchForm();
+   
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = (data) => {
+   
+    SubmitGetInTouchFormMutation(data);
   };
 
   return (
@@ -62,17 +67,17 @@ export default function ContactForm() {
             }`}
             style={{ transitionDelay: "200ms" }}
           >
-            Have a project in mind? Let&apos;s discuss how I can help you
-            achieve your goals.
+            Have a project in mind? Let&apos;s discuss how I can help you achieve
+            your goals.
           </p>
 
-          {/* Form Card */}
           <div
-            className={`relative transition-all duration-700 ease-out ${visible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"} `}
+            className={`relative transition-all duration-700 ease-out ${
+              visible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
             style={{ transitionDelay: "300ms" }}
           >
             <div className="relative rounded-xl border border-[#3f3f46]/30 bg-card p-6 backdrop-blur-sm md:p-8">
-              {/* bg light effect */}
               <div
                 className="pointer-events-none absolute inset-0 before:absolute before:h-40 before:w-40 before:animate-pulse-soft before:rounded-full before:bg-gradient-to-br before:from-purple-500/20 before:via-pink-500/10 before:to-transparent before:opacity-30 before:blur-xl before:content-['']"
                 style={{
@@ -80,46 +85,31 @@ export default function ContactForm() {
                     "radial-gradient(circle at 70% 30%, rgba(192, 132, 252, 0.1) 0%, transparent 60%), radial-gradient(circle at 30% 70%, rgba(244, 114, 182, 0.05) 0%, transparent 60%)",
                 }}
               ></div>
-
-              {/* Form */}
-              <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="relative z-10 space-y-6"
+              >
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   <div>
                     <label
-                      htmlFor="firstName"
+                      htmlFor="name"
                       className="mb-1 block text-sm font-medium text-gray-300"
                     >
-                      First Name
+                      Name
                     </label>
                     <input
-                      id="firstName"
-                      name="firstName"
+                      id="name"
+                      {...register("name")}
                       type="text"
-                      onChange={handleChange}
-                      className={`gcl-form-control w-full rounded-lg border border-border bg-input p-3 text-foreground transition-all duration-200`}
-                      placeholder="John"
+                      className="gcl-form-control w-full rounded-lg border border-border bg-input p-3 text-foreground"
+                      placeholder="John Doe"
                     />
+                    {errors.name && (
+                      <p className="mt-1 text-sm text-red-500">
+                        {errors.name.message}
+                      </p>
+                    )}
                   </div>
-
-                  <div>
-                    <label
-                      htmlFor="lastName"
-                      className="mb-1 block text-sm font-medium text-gray-300"
-                    >
-                      Last Name
-                    </label>
-                    <input
-                      id="lastName"
-                      name="lastName"
-                      type="text"
-                      onChange={handleChange}
-                      className={`gcl-form-control w-full rounded-lg border border-border bg-input p-3 text-foreground transition-all duration-200`}
-                      placeholder="Doe"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   <div>
                     <label
                       htmlFor="email"
@@ -129,32 +119,60 @@ export default function ContactForm() {
                     </label>
                     <input
                       id="email"
-                      name="email"
+                      {...register("email")}
                       type="email"
-                      onChange={handleChange}
-                      className={`gcl-form-control w-full rounded-lg border border-border bg-input p-3 text-foreground transition-all`}
+                      className="gcl-form-control w-full rounded-lg border border-border bg-input p-3 text-foreground"
                       placeholder="john@example.com"
                     />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      className="mb-1 block text-sm font-medium text-gray-300"
-                    >
-                      Phone Number
-                    </label>
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      onChange={handleChange}
-                      className={`gcl-form-control w-full rounded-lg border border-border bg-input p-3 text-foreground transition-all duration-200`}
-                      placeholder="+1 (555) 123-4567"
-                    />
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-red-500">
+                        {errors.email.message}
+                      </p>
+                    )}
                   </div>
                 </div>
-
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="mobile"
+                      className="mb-1 block text-sm font-medium text-gray-300"
+                    >
+                      Mobile
+                    </label>
+                    <input
+                      id="mobile"
+                      {...register("mobile")}
+                      type="tel"
+                      className="gcl-form-control w-full rounded-lg border border-border bg-input p-3 text-foreground"
+                      placeholder="9876543210"
+                    />
+                    {errors.mobile && (
+                      <p className="mt-1 text-sm text-red-500">
+                        {errors.mobile.message}
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="location"
+                      className="mb-1 block text-sm font-medium text-gray-300"
+                    >
+                      Location
+                    </label>
+                    <input
+                      id="location"
+                      {...register("location")}
+                      type="text"
+                      className="gcl-form-control w-full rounded-lg border border-border bg-input p-3 text-foreground"
+                      placeholder="City, Country"
+                    />
+                    {errors.location && (
+                      <p className="mt-1 text-sm text-red-500">
+                        {errors.location.message}
+                      </p>
+                    )}
+                  </div>
+                </div>
                 <div>
                   <label
                     htmlFor="message"
@@ -164,20 +182,26 @@ export default function ContactForm() {
                   </label>
                   <textarea
                     id="message"
-                    name="message"
+                    {...register("message")}
                     rows="4"
-                    onChange={handleChange}
-                    className="gcl-form-control w-full rounded-lg border border-border bg-input p-3 text-foreground transition-all duration-200"
+                    className="gcl-form-control w-full rounded-lg border border-border bg-input p-3 text-foreground"
                     placeholder="Tell me about your project..."
                   ></textarea>
+                  {errors.message && (
+                    <p className="mt-1 text-sm text-red-500">
+                      {errors.message.message}
+                    </p>
+                  )}
                 </div>
-
                 <div>
                   <button
                     type="submit"
-                    className="hover:bg-secondary/90 group flex w-full items-center justify-center rounded-lg bg-secondary px-4 py-3 font-medium text-white transition-all duration-300"
+                    disabled={isSubmitting || isSubmissionPending}
+                    className="hover:bg-secondary/90 group flex w-full items-center justify-center rounded-lg bg-secondary px-4 py-3 font-medium text-white transition-all duration-300 disabled:opacity-50"
                   >
-                    Send Message
+                    {isSubmitting || isSubmissionPending
+                      ? "Sending..."
+                      : "Send Message"}
                   </button>
                 </div>
               </form>

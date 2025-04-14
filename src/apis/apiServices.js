@@ -1,7 +1,13 @@
 import axios from "axios";
 
-// Get API URL from env
-const API_URL = import.meta.env.VITE_API_URL;
-
-// Include cookies in requests
-axios.defaults.withCredentials = true;
+export const submitGetInTouch = async (formData) => {
+  try {
+    const response = await axios.post(
+      "https://we-chat-backend-kappa.vercel.app/portfolio/GetInTouch", 
+      formData
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.message || "Submission failed");
+  }
+};
