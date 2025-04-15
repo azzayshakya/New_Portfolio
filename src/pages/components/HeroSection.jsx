@@ -34,7 +34,7 @@ export default function HeroSection() {
     <section
       id="home"
       ref={HeroSectionRef}
-      className="container relative w-full overflow-hidden pb-20 pt-40"
+      className="relative w-full overflow-hidden pb-20 pt-40"
     >
       <div className="relative z-10 flex flex-col items-center justify-center px-6 text-center">
         <p

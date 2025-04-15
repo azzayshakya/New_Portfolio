@@ -32,6 +32,7 @@ export default function ContactForm() {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = form;
   const { SubmitGetInTouchFormMutation, isSubmissionPending } =
     useSubmitGetInTouchForm();
@@ -39,7 +40,16 @@ export default function ContactForm() {
 
   const onSubmit = (data) => {
    
-    SubmitGetInTouchFormMutation(data);
+    SubmitGetInTouchFormMutation(data,{
+      onSuccess:()=>{
+        reset();
+      },
+      onError:()=>{
+        reset();
+      }
+    });
+    
+    
   };
 
   return (
